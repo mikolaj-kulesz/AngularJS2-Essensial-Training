@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: 'mk-media-item',
@@ -8,7 +8,14 @@ import { Component } from "@angular/core";
 export class MediaItemComponent {
     name = "The Redemption";
 
-    wasWatched = function () {
+    wasWatched() {
         return true;
+    }
+
+    @Input('mediaItemName') mediaItem;
+    //@Input() mediaItem; - better not to use it and switch names
+
+    onDelete(){
+        console.log('delete')
     }
 }
